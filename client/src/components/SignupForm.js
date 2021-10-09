@@ -33,7 +33,7 @@ const SignupForm = () => {
         variables: { ...userFormData }
       });
 
-      if (!response.ok) {
+      if (!data) {
         throw new Error('something went wrong!');
       }
       
