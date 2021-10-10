@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Book Search Engine",
   "main": "server.js",
+  "homepage": "https://myapp.herokuapp.com/",
   "scripts": {
     "start": "node server.js",
     "watch": "nodemon server.js"
