@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
-  "homepage": "https://murmuring-mountain-05694.herokuapp.com/",
   "dependencies": {
     "@apollo/client": "^3.4.15",
     "@testing-library/jest-dom": "^4.2.4",

@@ -28,15 +28,13 @@ startServer();
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-const root = path.join(__dirname, 'client', 'build');
+let root = path.join(__dirname, '..', 'client/build/');
+app.use(express.static(root));
 
-// if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(root));
-};
-
-app.get("*", (req, res) => {
-  res.sendFile('index.html', { root });
+app.get("*", (req, res, next) => {
+  if (req.method === 'GET' && req.accepts('html') && !req.is('json') && !req.path.includes('.')) {
+    res.sendFile('index.html', { root });
+  } else next()
 });
 
 db.once('open', () => {
